@@ -2,6 +2,8 @@
 
 **DietApollo** is a pixel-themed web application that allows users to manage their personal meal plans, grocery lists, and calorie intake — all in one retro-styled interface. Built using Django for the back-end and JavaScript for dynamic front-end interactions, DietApollo aims to streamline daily food tracking with a nostalgic 8-bit twist.
 
+<img width="1915" height="873" alt="DietApollo" src="https://github.com/user-attachments/assets/93b4b3db-040b-4cc7-a7eb-e7e0c24fd217" />
+
 ---
 
 ## 🚀 Distinctiveness and Complexity
