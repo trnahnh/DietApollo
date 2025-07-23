@@ -1,0 +1,22 @@
+{% extends "mealprep/base.html" %}
+
+{% block content %}
+  <div class="header">
+    <h1>DietApollo</h1>
+    <p>Welcome @{{ user.username }} to DietApollo!</p>
+  </div>
+
+  <div class="two-col">
+    <div id="recipes" class="list-box"></div>
+
+    <div class="form-box">
+      <h2>Add Recipe</h2>
+      <form id="recipe-form">{% csrf_token %}
+        <input name="title" placeholder="Title">
+        <textarea name="ingredients" placeholder="Ingredients, comma-separated"></textarea>
+        <textarea name="instructions" placeholder="Instructions"></textarea>
+        <button type="button" id="recipe-save" class="btn">Save</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

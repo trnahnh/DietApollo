@@ -1,0 +1,37 @@
+{% extends "mealprep/base.html" %}
+
+{% block content %}
+  <h1 class="page-title">Favorites</h1>
+
+  {% if favorites %}
+    <div id="favorites-list">
+      {% for fav in favorites %}
+        <div class="recipe-card">
+          <h3>{{ fav.title }}</h3>
+
+          <div class="recipe-table">
+            <div>
+              <strong>Ingredients:</strong>
+              <ul>
+                {% for ing in fav.ingredients %}
+                  <li>{{ ing|cut:"["|cut:"]"|cut:"'" }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div>
+              <strong>Instructions:</strong>
+              <ul>
+                {% for step in fav.instructions %}
+                  <li>{{ step|cut:"["|cut:"]"|cut:"'" }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="no-data">No favourites yet. ⭐ recipes on the dashboard to see them here!</p>
+  {% endif %}
+{% endblock %}

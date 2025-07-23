@@ -1,0 +1,15 @@
+{% extends "mealprep/base.html" %}
+
+{% block content %}
+<div class="form-hero">
+  <div class="form-box auth-box">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input name="username" placeholder="Username">
+      <input name="password" type="password" placeholder="Password">
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

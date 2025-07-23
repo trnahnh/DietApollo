@@ -1,0 +1,20 @@
+{% extends "mealprep/base.html" %}
+
+{% block content %}
+<div class="hero">
+  <h1>DietApollo</h1>
+  <p>Create meal plans, add grocery lists, and track calories.</p>
+
+  <div class="auth-links">
+    <a href="{% url 'login' %}" class="btn">Login</a>
+    <a href="{% url 'register' %}" class="btn">Register</a>
+  </div>
+
+  <div class="icons">
+    <div class="food-icon">🍎</div>
+    <div class="food-icon">🍞</div>
+    <div class="food-icon">🥦</div>
+    <div class="food-icon">🍗</div>
+  </div>
+</div>
+{% endblock %}

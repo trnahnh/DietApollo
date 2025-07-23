@@ -1,0 +1,32 @@
+{% extends 'mealprep/base.html' %}
+
+{% block content %}
+  <div class="header">
+    <h1>Grocery List</h1>
+  </div>
+
+  <div id="grocery-list">
+    {% if items %}
+      {% for item in items %}
+        <div class="grocery-card">
+          <div class="grocery-item-name">{{ item.name }}</div>
+          {% if item.notes %}
+            <div class="grocery-item-notes">{{ item.notes }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-data">No grocery items yet.</p>
+    {% endif %}
+  </div>
+
+  <div class="form-box">
+    <h2>Add Grocery Item</h2>
+    <form method="post">
+      {% csrf_token %}
+      <input type="text" name="name" placeholder="Item name" required>
+      <textarea name="notes" placeholder="Optional notes"></textarea>
+      <button class="btn" type="submit">Add</button>
+    </form>
+  </div>
+{% endblock %}
