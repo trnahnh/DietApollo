@@ -92,6 +92,6 @@ The layout uses flexible grid and flexbox styling to ensure the application is u
 
 ## 👩‍💻 Author
 
-**Andrea Tran**  
+**Andrea Tran | tran3ah@mail.uc.edu**  
 University of Cincinnati  
 College of Engineering and Applied Science — Class of 2029
