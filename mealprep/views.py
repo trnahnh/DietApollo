@@ -2,12 +2,11 @@ import json
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import JsonResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from django.views.decorators.csrf import csrf_exempt
 
 from .models import Recipe, GroceryItem, CalorieEntry
-from .forms  import RecipeForm, GroceryForm, CalorieForm
+from .forms  import RecipeForm, GroceryForm, CalorieForm, RegisterForm, LoginForm
 
 
 # ------------------------------------------------------------------ #
@@ -18,7 +17,7 @@ def index(request):
 
 
 def register_view(request):
-    form = UserCreationForm(request.POST or None)
+    form = RegisterForm(request.POST or None)
     if request.method == "POST" and form.is_valid():
         user = form.save()
         login(request, user)
@@ -27,7 +26,7 @@ def register_view(request):
 
 
 def login_view(request):
-    form = AuthenticationForm(data=request.POST or None)
+    form = LoginForm(data=request.POST or None)
     if request.method == "POST" and form.is_valid():
         login(request, form.get_user())
         return redirect("dashboard")
